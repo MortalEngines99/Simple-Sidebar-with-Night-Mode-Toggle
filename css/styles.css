@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic");
+
+:root{
+    --light-background-color:#EFF6EE;
+    --dark-background-color:#141414;
+
+    --light-foreground-color:#EE964B;
+    --dark-foreground-color:#1f1f1f;
+
+    --light-text-color:#EFF6EE;
+    --dark-text-color: #111111;
+
+    --light-primary-button:#357ced;
+    --dark-primary-button: #1f1f1f;
+    
+    --light-secondary-button:#34113F;
+    --dark-secondary-button: #303030;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    transition: background-color .5s ease;
+}
+
+body {
+    padding:0 10%;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:var(--light-background-color);
+    color:var(--dark-text-color);
+}
+body.dark{
+    background: var(--dark-background-color);
+    color:var(--light-text-color);
+}
+
+h2{
+    margin-bottom:30px;
+    font-weight: 400;
+}
+
+.button{
+    padding:15px 20px;
+    font-size:1.2rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+    cursor:pointer;
+}
+
+.button-primary{
+    color:inherit;
+    background-color: var(--light-primary-button);
+    transition:background-color .3s ease;
+}
+
+.button-primary.dark{
+    background-color: var(--dark-primary-button);
+}
+
+.button-secondary{
+    color:inherit;
+    background-color: var(--secondary-button-color);
+    transition:background-color .3s ease;
+}
+
+.button-secondary.dark{
+    background-color : var(--dark-secondary-button);
+}
+
+.sidebar{
+    color:var(--dark-text-color);
+    background-color:var(--light-foreground-color);
+    position: absolute;
+    left:-100%;
+    top:0;
+    height:100vh;
+    width:45vw;
+    box-shadow:2px 0 3px rgba(0, 0, 0, 0.3);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.3s ease;
+}
+
+.sidebar.dark{
+    color:var(--light-text-color);
+    background-color:var(--dark-foreground-color);
+}
+
+.sidebar button:first-child{
+    margin-bottom:20px;
+}
+
+@media screen and (max-width:550px){
+    .sidebar{
+        width: 60vw;
+    }
+}
+@media screen and (max-width:420px){
+    .sidebar{
+        width: 100vw;
+    }
+}
